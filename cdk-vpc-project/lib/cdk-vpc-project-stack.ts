@@ -22,6 +22,11 @@ export class CdkVpcProjectStack extends cdk.Stack {
       ]
     })
 
+    new cdk.CfnOutput(this, 'VpcId', {
+      value: vpc.vpcId,
+      description: 'output the VPC ID'
+    })
+
 
   }
 }
