@@ -27,6 +27,6 @@ export class CdkVpcProjectStack extends cdk.Stack {
       description: 'output the VPC ID'
     })
 
-
+// SUCCESS FULL DEPLOYMENT TO CLOUDFORMATION VPC & INSTANCES
   }
 }
