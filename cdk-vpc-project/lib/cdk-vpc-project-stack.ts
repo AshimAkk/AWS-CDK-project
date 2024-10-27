@@ -8,14 +8,20 @@ export class CdkVpcProjectStack extends cdk.Stack {
 
     const vpc = new ec2.Vpc(this, 'CDK_VPC', {
       maxAzs: 2,
-      subnetConfiguration: [{
-        name: 'Public',
-        subnetType: ec2.SubnetType.PUBLIC,
-        cidrMask: 24
-      }
+      subnetConfiguration: [
+        {
+          name: 'Public',
+          subnetType: ec2.SubnetType.PUBLIC,
+          cidrMask: 24
+        },
+        {
+          name: 'Private',
+          subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
+          cidrMask: 24
+        }
       ]
     })
 
-    
+
   }
 }
