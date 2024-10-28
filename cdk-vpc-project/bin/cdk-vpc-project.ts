@@ -9,7 +9,7 @@ const vpcStack = new CdkVpcProjectStack(app, 'CdkVpcProjectStack', {
  
 });
 
-new EC2Stack(app, 'PrivateEC2', {
+new EC2Stack(app, 'Database-Instances', {
   vpc:vpcStack.vpc
 })
 
