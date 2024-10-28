@@ -13,7 +13,7 @@ export class EC2Stack extends cdk.Stack {
         super(scope, id, props);
 
 
-        // first database EC2 instance 
+        // first database instance 
 
         const instance1 = new ec2.Instance(this, 'PrivateEC2-1-AZ1', {
             vpc: props.vpc,
@@ -31,7 +31,7 @@ export class EC2Stack extends cdk.Stack {
 
         // Second Database instance
 
-        const instance2 = new ec2.Instance(this, 'PrivateEC2-2-AZ1', {
+        const instance2 = new ec2.Instance(this, 'PrivateEC2-2-AZ2', {
             vpc: props.vpc,
             vpcSubnets: {
                 subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
@@ -44,7 +44,7 @@ export class EC2Stack extends cdk.Stack {
 
 
         })
-            cdk.Tags.of(instance2).add('Name', 'PrivateEC2-2-AZ1')
+            cdk.Tags.of(instance2).add('Name', 'PrivateEC2-2-AZ2')
 
     }
 }
