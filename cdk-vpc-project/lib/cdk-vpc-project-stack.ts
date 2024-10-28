@@ -18,6 +18,11 @@ export class CdkVpcProjectStack extends cdk.Stack {
           name: 'Private',
           subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
           cidrMask: 24
+        },
+        {
+          name:'Database',
+          subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
+          cidrMask: 24
         }
       ]
     })
