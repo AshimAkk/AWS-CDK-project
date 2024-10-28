@@ -12,3 +12,5 @@ const vpcStack = new CdkVpcProjectStack(app, 'CdkVpcProjectStack', {
 new EC2Stack(app, 'MyEC2Stack', {
   vpc:vpcStack.vpc
 })
+
+app.synth()
