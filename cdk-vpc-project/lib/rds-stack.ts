@@ -16,9 +16,9 @@ export class RDSStack extends cdk.Stack {
 
     // RDS Instance 
 
-        const rdsInstance = new rds.DatabaseInstance(this, 'RDS-instance', {
+        const rdsInstance = new rds.DatabaseInstance(this, 'Database', {
             vpc:props.vpc,
-            databaseName: 'RDS-Instance',
+            databaseName: 'rdsDatabase',
             engine: rds.DatabaseInstanceEngine.mysql({ version: rds.MysqlEngineVersion.VER_8_0 }),
             allocatedStorage: 20,
             maxAllocatedStorage: 30,
