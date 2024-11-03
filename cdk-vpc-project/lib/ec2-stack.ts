@@ -12,6 +12,37 @@ export class EC2Stack extends cdk.Stack {
     constructor(scope: Construct, id: string, props: EC2StackProps) {
         super(scope, id, props);
 
+        // First public subnet 
+        const instance3 = new ec2.Instance(this, 'Public-1-AZ3', {
+            vpc: props.vpc,
+            vpcSubnets: {
+                subnetType: ec2.SubnetType.PUBLIC,
+                availabilityZones: [props.vpc.availabilityZones[0]]
+            },
+            machineImage: new ec2.AmazonLinuxImage({
+                generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2
+            }),
+            instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO)
+        })
+
+            cdk.Tags.of(instance3).add('Name', 'PublicEC2-1-AZ3')
+
+            // second public subnet 
+
+            const instance4 = new ec2.Instance(this, 'Public-1-AZ4', {
+                vpc: props.vpc,
+                vpcSubnets: {
+                    subnetType: ec2.SubnetType.PUBLIC,
+                    availabilityZones: [props.vpc.availabilityZones[1]]
+                },
+                machineImage: new ec2.AmazonLinuxImage({
+                    generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2
+                }),
+                instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO)
+            })
+    
+                cdk.Tags.of(instance4).add('Name', 'PublicEC2-1-AZ4')
+
 
         // first database instance 
 
