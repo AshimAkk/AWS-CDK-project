@@ -1,4 +1,4 @@
-# AWS CDK -(TypeScript)  3-Tier Web Application
+# AWS CDK - TypeScript)  3-Tier Web Application
 
 Key Tasks:
 
