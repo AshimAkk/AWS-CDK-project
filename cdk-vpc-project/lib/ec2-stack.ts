@@ -44,7 +44,7 @@ export class EC2Stack extends cdk.Stack {
                 cdk.Tags.of(instance4).add('Name', 'PublicEC2-1-AZ4')
 
 
-        // first database instance 
+        // first private instance
 
         const instance1 = new ec2.Instance(this, 'PrivateEC2-1-AZ1', {
             vpc: props.vpc,
@@ -60,7 +60,7 @@ export class EC2Stack extends cdk.Stack {
 
             cdk.Tags.of(instance1).add('Name', 'PrivateEC2-1-AZ1')
 
-        // Second Database instance
+        // Second second private
 
         const instance2 = new ec2.Instance(this, 'PrivateEC2-2-AZ2', {
             vpc: props.vpc,

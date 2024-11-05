@@ -32,10 +32,7 @@ export class RDSStack extends cdk.Stack {
         })
         cdk.Tags.of(rdsInstance).add('Name', 'RDS-instance')
 
-        // print out the RDS Endpoint
-        const readEndPointProperty: rds.CfnDBCluster.ReadEndpointProperty = {
-            address: ''
-        }
+       
   
     }
 
