@@ -8,4 +8,4 @@ Key Tasks:
 - Set up and configure an RDS Database
 
 Project Documentaion:
-
+https://medium.com/@akkiyemba01/aws-cdk-typescript-3-tier-web-application-ef4b6c174747
